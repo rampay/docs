@@ -1,0 +1,169 @@
+---
+title: "Update User"
+description: "Update a user profile with new data"
+api: "PUT /v1/partner/user/{USER_ID}"
+---
+
+### Parameters
+
+<Param path="USER_ID" type="string" required>
+
+The user identifier of the user to retrieve
+
+Example: `f390fbe38f9646a05e293307b0f4097f`
+
+</Param>
+
+### Body
+
+<Param body="firstName" type="string">
+
+First name of the user.
+
+Example: `jack`
+
+</Param>
+
+<Param body="lastName" type="string">
+
+Last name of the user.
+
+Example: `doe`
+
+</Param>
+
+<Param body="email" type="string">
+
+Email address of the user.
+
+Example: `john`
+
+</Param>
+
+<Param body="dateOfBirth" type="string">
+
+The birth day of the user in format `yyyy-mm-dd`
+
+Example: `1990-12-22`
+
+</Param>
+
+<Param body="isdCode" type="string">
+
+The [ISD Code](https://www.indyatour.com/directory/isd-code) (country calling code) of the user
+
+Example: `+1`
+
+</Param>
+
+<Param body="phoneNumber" type="string">
+
+Phone number of the user
+
+Example: `5417543010`
+
+</Param>
+
+<Param body="addressInfo" type="object">
+
+<Expandable title="Toggle object">
+
+<Param body="addressLine1" type="string">
+
+Address Line 1
+
+Example: `Rue de Forte`
+
+</Param>
+
+<Param body="addressLine2" type="string">
+
+Address Line 2
+
+Example: `Louvre Road`
+
+</Param>
+
+<Param body="state" type="string">
+
+The state of the user's address
+
+Example: `California`
+
+</Param>
+
+<Param body="city" type="string">
+
+The city of the address
+
+Example: `Los Angeles`
+
+</Param>
+
+<Param body="country" type="string">
+
+The country (as a country code)
+
+Example: `US`
+
+</Param>
+
+<Param body="postalCode" type="string">
+
+The user's postal code
+
+Example: `12345`
+
+</Param>
+
+</Expandable>
+
+</Param>
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request PUT 'https://api-sandbox.rampay.io/v1/partner/user/f390fbe38f9646a05e293307b0f4097f' \
+--data-raw '{
+    "firstName": "Jack",
+    "addressInfo": {
+        "addressLine1": "street22",
+        "addressLine2": "street2",
+        "state": "Newyork",
+        "city": "Gotham",
+        "country": "DE",
+        "postalCode": "21234"
+    }
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+  "status": "success",
+  "message": "User updated",
+  "response": {
+    "user": {
+      "id": "f390fbe38f9646a05e293307b0f4097f"
+    }
+  }
+}
+```
+
+```bash Headers
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 02 Sep 2022 13:58:38 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 107
+Connection: keep-alive
+X-Request-Id: 69e3e70d-30b6-48fe-b91d-7e6738e27069
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
+Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
+ETag: W/"6b-0vmALqCL6BDA9ZJuh+rbDnZ9fhk"
+```
+
+</ResponseExample>

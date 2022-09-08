@@ -1,0 +1,48 @@
+---
+title: "Introduction"
+description: "Rampay is a fiat<>crypto on/off ramp payment gateway. Our robust API solution provides seamless integration to interact with the platform"
+---
+
+## Quick integration without APIs
+
+If you are looking to integrate quickly without the need to create an order on your side, you can look at our [integration guide](/integration) for enabling your users to buy crypto.
+
+`Widget Sandbox URL`: [https://exchange-sandbox.rampay.io](https://exchange-sandbox.rampay.io)
+
+`Widget Production URL`: [https://exchange.rampay.io](https://exchange.rampay.io)
+
+## Overview
+
+Following APIs are provided:
+
+<Card title="List of Fiat Currencies" icon={duotone("coins")}>
+  GET /v2/fiat_currencies
+</Card>
+
+<Card title="List of Crypto Currencies" icon={brands("bitcoin")}>
+  GET /v1/crypto_currencies
+</Card>
+
+<Card title="Pricing & Fees" icon={duotone("tags")}>
+  POST /v1/pricing
+</Card>
+
+<Card title="Create Order" icon={duotone("cart-plus")}>
+  POST /v1/partner/order
+</Card>
+
+<Card title="Get Order" icon={duotone("inbox-in")}>
+  GET /v1/partner/order?orderId={}
+</Card>
+
+`APIs Sandbox URL`: [https://api-sandbox.rampay.io](https://api-sandbox.rampay.io)
+
+`APIs Production URL`: [https://api.rampay.io](https://api.rampay.io)
+
+## How the API flow works
+
+- Show list of supported fiat currencies and crypto currencies to your users using the available APIs
+- Get pricing details for fiat amount, cryptocurrency and fiat currency.
+- Create an order (using the API secret for auth) in your backend. That will return an order Id.
+- Send the order Id along with your API key in the query params like this: [https://exchange-sandbox.rampay.io?orderId=&apiKey=](https://exchange-sandbox.rampay.io?orderId=&apiKey=)
+- You can get the status of each order using the GET order API mentioned below.

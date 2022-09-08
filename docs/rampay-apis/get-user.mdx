@@ -1,0 +1,66 @@
+---
+title: "Get User"
+description: "Fetch a user by their identifier"
+api: "GET /v1/partner/user/{USER_ID}"
+---
+
+### Parameters
+
+<Param path="USER_ID" type="string" required>
+
+The user identifier of the user to retrieve
+
+Example: `f390fbe38f9646a05e293307b0f4097f`
+
+</Param>
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request GET 'https://api-sandbox.rampay.io/v1/partner/user/f390fbe38f9646a05e293307b0f4097f'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+  "status": "success",
+  "message": "User data found",
+  "response": {
+    "user": {
+      "id": "f390fbe38f9646a05e293307b0f4097f",
+      "email": "john_doe@example.com",
+      "firstName": "Jack",
+      "lastName": "doe",
+      "dateOfBirth": "1990-12-22",
+      "isdCode": "+1",
+      "phoneNumber": "5417543010",
+      "addressInfo": {
+        "addressLine1": "street22",
+        "addressLine2": "street2",
+        "state": "Newyork",
+        "city": "Gotham",
+        "country": "DE",
+        "postalCode": "21234"
+      }
+    }
+  }
+}
+```
+
+```bash Headers
+Server: nginx/1.18.0 (Ubuntu)
+Date: Fri, 02 Sep 2022 13:59:09 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 383
+Connection: keep-alive
+X-Request-Id: 9fed7e72-a888-4948-85a1-c5d3de76e947
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
+Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
+ETag: W/"17f-WJ+DUMgu9EP05Z7pkxm2fXlZRB0"
+```
+
+</ResponseExample>

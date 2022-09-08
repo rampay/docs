@@ -1,0 +1,70 @@
+{
+  "name": "Rampay",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0458F2",
+    "light": "#38B4FF",
+    "dark": "#0A3A93",
+    "ultraLight": "#E3F7FF",
+    "ultraDark": "#010529"
+  },
+  "api": {
+    "baseUrl": [
+      "https://api-sandbox.rampay.io",
+      "https://api.rampay.io"
+    ],
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Contact Us",
+      "url": "https://rampay.io/#contact-us"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Try it",
+    "url": "https://rampay.io/exchange"
+  },
+  "anchors": [
+    {
+      "name": "Demo",
+      "icon": "circle-play",
+      "url": "https://rampay.io/exchange/"
+    },
+    {
+      "name": "Contact Us",
+      "icon": "envelope",
+      "url": "https://rampay.io/#contact-us"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Home",
+      "pages": ["integration"]
+    },
+    {
+      "group": "Rampay APIs",
+      "pages": [
+        "rampay-apis/introduction",
+        "rampay-apis/list-of-crypto-currencies",
+        "rampay-apis/list-of-fiat-currencies",
+        "rampay-apis/pricing",
+        "rampay-apis/create-user",
+        "rampay-apis/update-user",
+        "rampay-apis/create-order",
+        "rampay-apis/get-order"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/rampay_official",
+    "linkedin": "https://www.linkedin.com/company/rampay/about",
+    "instagram": "https://www.instagram.com/rampay_crypto"
+  }
+}

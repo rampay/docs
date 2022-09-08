@@ -1,0 +1,175 @@
+---
+title: "List of Fiat Currencies"
+description: "Get a list of available fiat currencies"
+api: "GET /v2/fiat_currencies"
+auth: "none"
+---
+
+<RequestExample>
+
+```bash Request Example
+curl --location \
+  --request GET 'https://api-sandbox.rampay.io/v2/fiat_currencies'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+  "status": "success",
+  "response": [
+    {
+      "fiat_id": 1,
+      "country_id": 7,
+      "country_name": "Brazil",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/brazil.png",
+      "country_code": "BR",
+      "fiat_name": "Brazilian Real",
+      "fiat_code": "BRL",
+      "fiat_symbol": "R$",
+      "fiat_default_amount": "250.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 1,
+          "name": "Bank Tranfer",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
+        },
+        {
+          "cfpm_id": 3,
+          "name": "Card",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/card_payment_icon.png"
+        },
+        {
+          "cfpm_id": 5,
+          "name": "Voucher",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
+        }
+      ],
+      "sell_allowed": false
+    },
+    {
+      "fiat_id": 2,
+      "country_id": 19,
+      "country_name": "Mexico",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/mexico.png",
+      "country_code": "MX",
+      "fiat_name": "Mexican Peso",
+      "fiat_code": "MXN",
+      "fiat_symbol": "Mex$",
+      "fiat_default_amount": "2000.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 2,
+          "name": "Bank Tranfer",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
+        },
+        {
+          "cfpm_id": 4,
+          "name": "Card",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/card_payment_icon.png"
+        },
+        {
+          "cfpm_id": 6,
+          "name": "Voucher",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
+        }
+      ],
+      "sell_allowed": false
+    },
+    {
+      "fiat_id": 3,
+      "country_id": 22,
+      "country_name": "Philippines",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/philippine.png",
+      "country_code": "PH",
+      "fiat_name": "Philippine Peso",
+      "fiat_code": "PHP",
+      "fiat_symbol": "₱",
+      "fiat_default_amount": "5000.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 7,
+          "name": "Bank Deposit",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_deposit_icon.png"
+        }
+      ],
+      "sell_allowed": false
+    },
+    {
+      "fiat_id": 4,
+      "country_id": 26,
+      "country_name": "Thailand",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/thailand.png",
+      "country_code": "TH",
+      "fiat_name": "Thai Baht",
+      "fiat_code": "THB",
+      "fiat_symbol": "฿",
+      "fiat_default_amount": "1500.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 8,
+          "name": "Bank Tranfer",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
+        }
+      ],
+      "sell_allowed": false
+    },
+    {
+      "fiat_id": 5,
+      "country_id": 31,
+      "country_name": "Nigeria",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/nigeria.png",
+      "country_code": "NG",
+      "fiat_name": "Nigerian Naira",
+      "fiat_code": "NGN",
+      "fiat_symbol": "₦",
+      "fiat_default_amount": "40000.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 9,
+          "name": "Voucher",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
+        }
+      ],
+      "sell_allowed": false
+    },
+    {
+      "fiat_id": 6,
+      "country_id": 32,
+      "country_name": "Ghana",
+      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/ghana.png",
+      "country_code": "GH",
+      "fiat_name": "Ghanaian Cedi",
+      "fiat_code": "GHS",
+      "fiat_symbol": "GH₵",
+      "fiat_default_amount": "1000.00000000000000000000000000000000000000000000000000",
+      "payment_methods": [
+        {
+          "cfpm_id": 10,
+          "name": "Voucher",
+          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
+        }
+      ],
+      "sell_allowed": false
+    }
+  ]
+}
+```
+
+```bash Headers
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 30 Aug 2022 14:57:37 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 3160
+Connection: keep-alive
+X-Request-Id: fa204a6c-d25f-4685-b4f5-635d51f91daa
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
+Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
+ETag: W/"c58-bjSDe4eCMscqBleeohr/6NfwRS8"
+```
+
+
+</ResponseExample>

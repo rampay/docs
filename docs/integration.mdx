@@ -1,0 +1,188 @@
+---
+title: "Rampay Integration Steps"
+description: "This guide contains steps to integrate the Rampay widget in your website/app"
+---
+
+## Steps
+
+- Get an API key by contacting us. Our contact info is mentioned [here](https://www.notion.so/Welcome-to-Rampay-22299f0cf1e94be4867dab59f8d70225)
+- Place the widget
+
+```html
+<iframe
+  src="https://exchange.rampay.io ?apiKey={PARTNER_API_KEY}"
+  width="50%"
+  height="100%">
+  Your browser does not support iframes.
+</iframe>
+```
+
+We are also working on a partner dashboard where partners would be able to see all orders placed through their platform.
+
+## Ways to customise widget
+
+The widget is customisable in a lot of ways.
+
+The customisation options can be passed as query params with the widget link in `src` tag of iframe. For eg. below example will always open up the widget with default selected fiat currency as US dollars and cryptocurrency as Bitcoin.
+
+```html
+<iframe
+  src="https://exchange.rampay.io
+        ?from=usd&to=btc"
+  width="50%"
+  height="100%">
+  Your browser does not support iframes.
+</iframe>
+```
+
+### More query params to customise widget
+
+Following list contains all the possible query params that can be used to customise the widget.
+
+<Param query="apiKey" default="empty" type="string">
+
+API key unique to each partner.
+
+Sample: `apiKey=5b3b5af4-c9cd-4fc3-88b9-ec6aca28d6f2`
+
+</Param>
+
+<Param query="to" default="eth" type="string">
+
+Default selected crypto currency to show when widget loads
+
+Sample: `to=btc`
+
+</Param>
+
+<Param query="from" default="usd" type="string">
+
+Default selected fiat currency to show when widget loads
+
+Sample: `from=gbp`
+
+</Param>
+
+<Param query="amt" default="200" type="number">
+
+Default amount of fiat currency to show when widget loads
+
+Sample: `amt=1000`
+
+</Param>
+
+<Param query="walletAddress" default="empty" type="<crypto code>:<wallet address>">
+
+Comma separated values of wallet addresses in case you want to prefill wallet address when user tries to buy crypto
+
+Sample: `walletAddress=btc:0x43rwerlknwenrlekwnrewlnkr,eth:0x34kwmrkwernjnrs4k435kmk4432glfd` . In this case, whenever the selected currencies in the widget are `btc` or `eth` the provided wallet address would prefill in the wallet address field in the transaction flow.
+
+</Param>
+
+<Param query="primaryColor" default="1D0458" type="color hex">
+
+Hexcode of color theme for sdk. Like button color etc.
+
+Sample: `primaryColor=4a88ce`
+
+</Param>
+
+<Param query="cl" type="string">
+
+`cl` stands for crypto list. Comma separated list of crypto currencies if you only want to show a subset of available cryptocurrencies.
+
+Sample: `cl=btc,eth`
+
+Defaults to empty in which case we show all currencies
+
+</Param>
+
+<Param query="isDarkTheme" default="empty" type="boolean">
+
+<Note>In beta</Note>
+
+`cl` stands for crypto list. Comma separated list of crypto currencies if you only want to show a subset of available cryptocurrencies.
+
+Enable dark theme for the widget.
+
+Check it out [here](https://exchange.rampay.io?isDarkTheme=true)
+
+Defaults to empty which loads the light theme
+
+</Param>
+
+<Param query="q" type="JWT">
+
+This param is used for masking all other params in the form of a JWT token
+
+For more details check out [here](https://www.notion.so/Rampay-Integration-Steps-9e8fa773020f400c9787b420d8494fe0)
+
+</Param>
+
+<Param query="mode" default="empty" type="string">
+
+To enforce only buy option in the widget, this key can used
+Only possible value possible for it at the moment is `buy`
+
+Sample: `mode=buy` This will hide the sell tab and only show the buy tab on the main page of the widget when it loads
+
+Defaults to empty in which case we show both buy & sell tab
+
+</Param>
+
+<Param query="disableCryptoChange" default="value from `to` param" type="string">
+
+Disables the dropdown for crypto change
+
+</Param>
+
+<Param query="disableFiatChange" default="value from `from` param" type="string">
+
+Disables the dropdown for fiat change
+
+</Param>
+
+<Param query="disableFiatAmountChange" default="value from `amt` param" type="string">
+
+Disables the textbox for changing fiat amount
+
+</Param>
+
+<Param query="disableWalletAddressChange" type="string">
+
+Disabled the textbox for changing wallet address
+
+The `walletAddress` param mentioned above should be used in this case to set the wallet address for the user
+
+</Param>
+
+## How to sign query params in URL (Optional)
+
+Rampay provides the ability to mask the query params if you don't want your users to see or edit the query params.
+
+This can be done by following the below process:
+
+1. Contact Rampay team to generate a JWT secret key for you.
+2. Form a JSON for your query params and sign that payload with JWT using your secret key.
+3. Pass on the generated token into the query param `q` while calling the widget.
+   Eg. https://exchange.rampay.io?q=SIGNED_JWT_TOKEN
+
+Sample code to generate the JWT token for masking query params.
+
+```jsx
+const jwt = require("jsonwebtoken");
+
+function encodeQueryParams(params) {
+  try {
+    const token = jwt.sign(params, JWT_SECRET_KEY), {
+      expiresIn: EXPIRY_TIME
+    });
+    return token;
+  } catch (e) {
+    console.error(`Error in encoding query params ${e}`);
+  }
+}
+
+// Now simply get the encoded params by calling encodeQueryParams
+encodeQueryParams({"to": "btc", "mode": "buy"});
+```

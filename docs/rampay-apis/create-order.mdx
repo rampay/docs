@@ -1,0 +1,93 @@
+---
+title: "Create Order"
+description: "Initialize a new order request"
+api: "POST /v1/partner/order"
+---
+
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
+
+### Body
+
+<Param body="order" type="object" required>
+
+<Expandable title="Toggle object">
+
+<Param body="cfpmId" type="string">
+
+This ID is part of List of fiat currencies API response. It helps us identify the fiat currency and the payment method that user wishes to pay with.
+
+</Param>
+
+<Param body="cryptoCurrencyId" type="string">
+
+Crypto currency as part of List of crypto currencies response.
+
+</Param>
+
+<Param body="fiatAmount" type="string">
+
+Amount of fiat currency
+
+</Param>
+
+<Param body="walletAddress" type="string">
+
+Crypto wallet address for the selected crypto currency.
+
+</Param>
+
+<Param body="userId" type="string">
+
+(Optional) If sent, will take the user directly to payment screen
+
+</Param>
+
+</Expandable>
+
+</Param>
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request POST 'https://api.rampay.io/v1/partner/order' \
+--data-raw '{
+    "order":{
+        "cfpmId": 1,
+        "cryptoCurrencyId": 1,
+        "fiatAmount": 200,
+        "walletAddress": "0xa0f6ff6aca3a401766f96356e822d92576a42cc5"
+    }
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+  "status": "success",
+  "orderId": "6acd449853ff17ee7495f8adf61c9393"
+}
+```
+
+```bash Headers
+X-Request-Id: fe7cd113-988f-421f-90c2-baa323600deb
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, PUT, POST, DELETE, HEAD
+Access-Control-Allow-Headers: Content-Type, x-rl-auth-token
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+ETag: W/"41-rcOwpRt7dRIB+jVblgttNiW293M"
+Date: Fri, 17 Jun 2022 09:45:28 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+</ResponseExample>
