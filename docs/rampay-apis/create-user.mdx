@@ -1,12 +1,21 @@
 ---
 title: "Create User"
-description: "Set up a user profile with their information"
+description: "Create a new user with all profile information"
 api: "POST /v1/partner/user"
 ---
 
+
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
+
 ### Body
 
-<Param body="firstName" type="string">
+<Param body="firstName" type="string" required>
 
 First name of the user.
 
@@ -14,7 +23,7 @@ Example: `john`
 
 </Param>
 
-<Param body="lastName" type="string">
+<Param body="lastName" type="string" required>
 
 Last name of the user.
 
@@ -22,7 +31,7 @@ Example: `doe`
 
 </Param>
 
-<Param body="email" type="string">
+<Param body="email" type="string" required>
 
 Email address of the user.
 
@@ -30,7 +39,7 @@ Example: `john`
 
 </Param>
 
-<Param body="dateOfBirth" type="string">
+<Param body="dateOfBirth" type="string" required>
 
 The birth day of the user in format `yyyy-mm-dd`
 
@@ -38,7 +47,7 @@ Example: `1990-12-22`
 
 </Param>
 
-<Param body="isdCode" type="string">
+<Param body="isdCode" type="string" required>
 
 The [ISD Code](https://www.indyatour.com/directory/isd-code) (country calling code) of the user
 
@@ -46,7 +55,7 @@ Example: `+1`
 
 </Param>
 
-<Param body="phoneNumber" type="string">
+<Param body="phoneNumber" type="string" required>
 
 Phone number of the user
 
@@ -54,11 +63,11 @@ Example: `5417543010`
 
 </Param>
 
-<Param body="addressInfo" type="object">
+<Param body="addressInfo" type="object" required>
 
 <Expandable title="Toggle object">
 
-<Param body="addressLine1" type="string">
+<Param body="addressLine1" type="string" required>
 
 Address Line 1
 
@@ -74,15 +83,15 @@ Example: `Louvre Road`
 
 </Param>
 
-<Param body="state" type="string">
+<Param body="state" type="string" required>
 
 The state of the user's address
 
-Example: `California`
+Example: `CA`
 
 </Param>
 
-<Param body="city" type="string">
+<Param body="city" type="string" required>
 
 The city of the address
 
@@ -90,15 +99,15 @@ Example: `Los Angeles`
 
 </Param>
 
-<Param body="country" type="string">
+<Param body="country" type="string" required>
 
-The country (as a country code)
+The country (ISO 3166-1 alpha-2 code)
 
 Example: `US`
 
 </Param>
 
-<Param body="postalCode" type="string">
+<Param body="postalCode" type="string" required>
 
 The user's postal code
 
@@ -148,19 +157,6 @@ curl --location --request POST 'https://api-sandbox.rampay.io/v1/partner/user' \
     }
   }
 }
-```
-
-```bash Headers
-Server: nginx/1.18.0 (Ubuntu)
-Date: Fri, 02 Sep 2022 13:57:18 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 139
-Connection: keep-alive
-X-Request-Id: 76a52345-6e94-4a7a-96bf-afa4ab5ff20d
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
-Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
-ETag: W/"8b-FdppVVZ1Yaq295wPXDAaY211Mps"
 ```
 
 </ResponseExample>

@@ -3,28 +3,28 @@ title: "Introduction"
 description: "Rampay is a fiat<>crypto on/off ramp payment gateway. Our robust API solution provides seamless integration to interact with the platform"
 ---
 
-## Quick integration without APIs
 
-If you are looking to integrate quickly without the need to create an order on your side, you can look at our [integration guide](/integration) for enabling your users to buy crypto.
+`APIs Sandbox URL`: [https://api-sandbox.rampay.io](https://api-sandbox.rampay.io)
 
-`Widget Sandbox URL`: [https://exchange-sandbox.rampay.io](https://exchange-sandbox.rampay.io)
+`APIs Production URL`: [https://api.rampay.io](https://api.rampay.io)
 
-`Widget Production URL`: [https://exchange.rampay.io](https://exchange.rampay.io)
+## Authentication
 
+Please send you API secret as Bearer token in the Authorization header in all the following APIs. Some GET APIs may work without the header, but it is highly recommended that you send this 
 ## Overview
 
 Following APIs are provided:
 
 <Card title="List of Fiat Currencies" icon={duotone("coins")} href="/rampay-apis/list-of-fiat-currencies">
-  GET /v2/fiat_currencies
+  GET /v2/partner/fiat_currencies
 </Card>
 
 <Card title="List of Crypto Currencies" icon={brands("bitcoin")} href="/rampay-apis/list-of-crypto-currencies">
-  GET /v1/crypto_currencies
+  GET /v1/partner/crypto_currencies
 </Card>
 
 <Card title="Pricing & Fees" icon={duotone("tags")} href="/rampay-apis/pricing">
-  POST /v1/pricing
+  POST /v1/partner/pricing
 </Card>
 
 <Card title="Create Order" icon={duotone("cart-plus")} href="/rampay-apis/create-order">
@@ -32,17 +32,17 @@ Following APIs are provided:
 </Card>
 
 <Card title="Get Order" icon={duotone("inbox-in")} href="/rampay-apis/get-order">
-  GET /v1/partner/order?orderId={}
+  GET /v1/partner/order?orderId={orderId}
 </Card>
 
-`APIs Sandbox URL`: [https://api-sandbox.rampay.io](https://api-sandbox.rampay.io)
+<Card title="Create User" icon={duotone("cart-plus")} href="/rampay-apis/create-user">
+  POST /v1/partner/user
+</Card>
 
-`APIs Production URL`: [https://api.rampay.io](https://api.rampay.io)
+<Card title="Get User" icon={duotone("cart-plus")} href="/rampay-apis/get-user">
+  GET /v1/partner/user/{userId}
+</Card>
 
-## How the API flow works
-
-- Show list of supported fiat currencies and crypto currencies to your users using the available APIs
-- Get pricing details for fiat amount, cryptocurrency and fiat currency.
-- Create an order (using the API secret for auth) in your backend. That will return an order Id.
-- Send the order Id along with your API key in the query params like this: [https://exchange-sandbox.rampay.io?orderId=&apiKey=](https://exchange-sandbox.rampay.io?orderId=&apiKey=)
-- You can get the status of each order using the GET order API mentioned below.
+<Card title="Update User" icon={duotone("cart-plus")} href="/rampay-apis/update-user">
+  PUT /v1/partner/user
+</Card>
