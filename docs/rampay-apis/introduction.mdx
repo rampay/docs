@@ -3,7 +3,6 @@ title: "Introduction"
 description: "Rampay is a fiat<>crypto on/off ramp payment gateway. Our robust API solution provides seamless integration to interact with the platform"
 ---
 
-
 `APIs Sandbox URL`: [https://api-sandbox.rampay.io](https://api-sandbox.rampay.io)
 
 `APIs Production URL`: [https://api.rampay.io](https://api.rampay.io)
@@ -11,6 +10,7 @@ description: "Rampay is a fiat<>crypto on/off ramp payment gateway. Our robust A
 ## Authentication
 
 Please send you API secret as Bearer token in the Authorization header in all the following APIs. Some GET APIs may work without the header, but it is highly recommended that you send this 
+
 ## Overview
 
 Following APIs are provided:
@@ -32,7 +32,7 @@ Following APIs are provided:
 </Card>
 
 <Card title="Get Order" icon={duotone("inbox-in")} href="/rampay-apis/get-order">
-  GET /v1/partner/order?orderId={orderId}
+  GET /v1/partner/order?orderId=\{orderId}
 </Card>
 
 <Card title="Create User" icon={duotone("cart-plus")} href="/rampay-apis/create-user">
@@ -40,7 +40,7 @@ Following APIs are provided:
 </Card>
 
 <Card title="Get User" icon={duotone("cart-plus")} href="/rampay-apis/get-user">
-  GET /v1/partner/user/{userId}
+  GET /v1/partner/user/\{userId}
 </Card>
 
 <Card title="Update User" icon={duotone("cart-plus")} href="/rampay-apis/update-user">
