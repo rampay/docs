@@ -38,15 +38,15 @@
       "url": "https://rampay.io/exchange/"
     },
     {
-      "name": "Contact Us",
-      "icon": "envelope",
-      "url": "https://rampay.io/#contact-us"
+      "name": "Demo",
+      "icon": "circle-play",
+      "url": "https://rampay.io/exchange/"
     }
   ],
   "navigation": [
     {
       "group": "Home",
-      "pages": ["integration"]
+      "pages": ["mainpage", "integration"]
     },
     {
       "group": "Rampay APIs",
@@ -56,6 +56,7 @@
         "rampay-apis/list-of-fiat-currencies",
         "rampay-apis/pricing",
         "rampay-apis/create-user",
+        "/rampay-apis/get-user",
         "rampay-apis/update-user",
         "rampay-apis/create-order",
         "rampay-apis/get-order"

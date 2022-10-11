@@ -1,13 +1,19 @@
 ---
 title: "Pricing"
 description: "Create price"
-api: "POST /v1/pricing"
-auth: "none"
+api: "POST /v1/partner/pricing"
 ---
 
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
 ### Body
 
-<Param body="fiatAmount" type="integer">
+<Param body="fiatAmount" type="integer" required>
 
 Amount of fiat currency.
 
@@ -15,7 +21,7 @@ Example: `200`
 
 </Param>
 
-<Param body="cryptoCurrencyCode" type="string">
+<Param body="cryptoCurrencyCode" type="string" required>
 
 Crypto currency as part of List of crypto currencies response.
 
@@ -25,21 +31,21 @@ Example: `USDT`
 
 <Param body="cryptoCurrencyNetwork" type="string">
 
-The abbreviated code of the blockchain network.
+(Optional) The abbreviated code of the blockchain network. This needs to be included in crypto currencies like USDT that support different networks like erc20, trx etc.
 
-Example: `eth` (for ethereum)
+Example: `erc20` (for ethereum)
 
 </Param>
 
-<Param body="directory" type="string">
+<Param body="direction" type="string">
 
-Whether to buy or sell
+Whether to buy or sell. Currently only BUY_CRYPTO is supported.
 
 Example: `BUY_CRYPTO`
 
 </Param>
 
-<Param body="cfpmId" type="integer">
+<Param body="cfpmId" type="integer" required>
 
 The fiat currency and the payment method that user wishes to pay with.
 
@@ -50,7 +56,7 @@ Example: `1`
 <RequestExample>
 
 ```bash Request Example
-curl --location --request POST 'https://api-sandbox.rampay.io/v1/pricing' \
+curl --location --request POST 'https://api-sandbox.rampay.io/v1/partner/pricing' \
   --data-raw '{
       "fiatAmount": 200,
       "cryptoCurrencyCode": "USDT",
@@ -75,19 +81,5 @@ curl --location --request POST 'https://api-sandbox.rampay.io/v1/pricing' \
   }
 }
 ```
-
-```bash Headers
-Server: nginx/1.18.0 (Ubuntu)
-Date: Tue, 30 Aug 2022 15:09:21 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 146
-Connection: keep-alive
-X-Request-Id: daeda71f-f6ec-43bf-ac8a-82b7e8450009
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
-Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
-ETag: W/"92-9nubp7ZHekymEkS4eUddGA9Osac"
-```
-
 
 </ResponseExample>

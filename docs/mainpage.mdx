@@ -1,0 +1,50 @@
+---
+title: "Ways to Integrate"
+description: "A global fiat <> crypto payment gateway"
+---
+
+## Overview
+
+Rampay is on a mission to make fiat to crypto on/off ramp simple, robust and secure for all web3 applications. In order achieve that, we focus heavily on,
+- Enabling local payment methods to pay with fiat
+- Get the best price for your crypto by integrating multiple exchanges and liquidity providers in the backend
+- Have a smooth KYC experience for end users
+- Perform industry standard fraud & AML checks on users and transactions
+- A detailed dashboard for partners to deep dive into order analytics, change configurations & much more.
+
+
+## How to integrate
+
+Rampay provides 3 modes of integration:
+
+### 1. Direct widget integration - Get live quickly in just few lines of code
+
+Embed our widget within your application using an iframe. Customise a lot of things like color theme, default currencies, amount, etc.
+For more details on how this integration works, you can follow this Check it out [here](https://docs.rampay.io/integration).
+We are constantly adding more customization options to enhance the widget experience for you.
+
+### 2. Complete End to End API Integration (Direct)
+
+Build your own UI and use our APIs to create a user on our end. You can supply user details like address, phone number, name via our APIs and then create an order with this user's context to fix things like wallet address, crypto currency, fiat currency, fiat amount, payment method, etc.
+In this flow, all the widget screens are skipped and user sees a final screen to complete the payment.
+
+This is how this flow works,
+
+- Show list of supported [fiat currencies](https://docs.rampay.io/rampay-apis/list-of-fiat-currencies) and [crypto currencies](https://docs.rampay.io/rampay-apis/list-of-crypto-currencies) to your users using the available APIs
+- Get [pricing details](https://docs.rampay.io/rampay-apis/pricing) for fiat amount, cryptocurrency and fiat currency.
+- [Create a User](https://docs.rampay.io/rampay-apis/create-user) on our end from your backend.
+- [Create an order](https://docs.rampay.io/rampay-apis/create-order) from your backend with the user context.
+- Send the Order Id along with your API key in the query params like https://exchange-sandbox.rampay.io?orderId=ORDER_ID&apiKey=API_KEY
+- Configure webhooks in [partner dashboard](https://partner-sandbox.rampay.io) to get order status updates and get the status of each order using the [GET order API](https://docs.rampay.io/rampay-apis/get-order).
+
+### 3. Lightweight API Integration
+
+Build your own UI and use our APIs to show user crypto prices, create an order on our side to fix things like wallet address, crypto currency, fiat currency, fiat amount, payment method, etc.
+In this flow user can directly submit their information like phone number, name, address in the widget itself.
+This is how this flow works,
+
+- Show list of supported [fiat currencies](https://docs.rampay.io/rampay-apis/list-of-fiat-currencies) and [crypto currencies](https://docs.rampay.io/rampay-apis/list-of-crypto-currencies) to your users using the available APIs
+- Get [pricing details](https://docs.rampay.io/rampay-apis/pricing) for fiat amount, cryptocurrency and fiat currency.
+- [Create an order](https://docs.rampay.io/rampay-apis/create-order) from your backend with the user context.
+- Send the Order Id along with your API key in the query params like https://exchange-sandbox.rampay.io?orderId=ORDER_ID&apiKey=API_KEY
+- Configure webhooks in [partner dashboard](https://partner.rampay.io) to get order status updates and get the status of each order using the [GET order API](https://docs.rampay.io/rampay-apis/get-order).

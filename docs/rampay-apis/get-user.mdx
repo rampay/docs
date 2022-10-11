@@ -4,11 +4,18 @@ description: "Fetch a user by their identifier"
 api: "GET /v1/partner/user/{USER_ID}"
 ---
 
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
 ### Parameters
 
 <Param path="USER_ID" type="string" required>
 
-The user identifier of the user to retrieve
+The User ID of the user to retrieve
 
 Example: `f390fbe38f9646a05e293307b0f4097f`
 
@@ -48,19 +55,6 @@ curl --location --request GET 'https://api-sandbox.rampay.io/v1/partner/user/f39
     }
   }
 }
-```
-
-```bash Headers
-Server: nginx/1.18.0 (Ubuntu)
-Date: Fri, 02 Sep 2022 13:59:09 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 383
-Connection: keep-alive
-X-Request-Id: 9fed7e72-a888-4948-85a1-c5d3de76e947
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
-Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
-ETag: W/"17f-WJ+DUMgu9EP05Z7pkxm2fXlZRB0"
 ```
 
 </ResponseExample>

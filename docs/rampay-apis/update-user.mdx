@@ -3,6 +3,13 @@ title: "Update User"
 description: "Update a user profile with new data"
 api: "PUT /v1/partner/user/{USER_ID}"
 ---
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
 
 ### Parameters
 
@@ -66,9 +73,11 @@ Example: `5417543010`
 
 <Param body="addressInfo" type="object">
 
+You can't update only a particular field inside address. If you are looking to update address, then complete address details need to be provided.
+
 <Expandable title="Toggle object">
 
-<Param body="addressLine1" type="string">
+<Param body="addressLine1" type="string" required>
 
 Address Line 1
 
@@ -84,15 +93,15 @@ Example: `Louvre Road`
 
 </Param>
 
-<Param body="state" type="string">
+<Param body="state" type="string" required>
 
 The state of the user's address
 
-Example: `California`
+Example: `CA`
 
 </Param>
 
-<Param body="city" type="string">
+<Param body="city" type="string" required>
 
 The city of the address
 
@@ -100,15 +109,15 @@ Example: `Los Angeles`
 
 </Param>
 
-<Param body="country" type="string">
+<Param body="country" type="string" required>
 
-The country (as a country code)
+The country (ISO 3166-1 alpha-2 code)
 
 Example: `US`
 
 </Param>
 
-<Param body="postalCode" type="string">
+<Param body="postalCode" type="string" required>
 
 The user's postal code
 
@@ -151,19 +160,6 @@ curl --location --request PUT 'https://api-sandbox.rampay.io/v1/partner/user/f39
     }
   }
 }
-```
-
-```bash Headers
-Server: nginx/1.18.0 (Ubuntu)
-Date: Fri, 02 Sep 2022 13:58:38 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 107
-Connection: keep-alive
-X-Request-Id: 69e3e70d-30b6-48fe-b91d-7e6738e27069
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
-Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
-ETag: W/"6b-0vmALqCL6BDA9ZJuh+rbDnZ9fhk"
 ```
 
 </ResponseExample>

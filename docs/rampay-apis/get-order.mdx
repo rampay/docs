@@ -1,6 +1,6 @@
 ---
 title: "Get Order"
-description: "Fetch an order object using an identifier"
+description: "Fetch an order object using Order ID"
 api: "GET /v1/partner/order"
 ---
 
@@ -16,7 +16,7 @@ Header Value: `Bearer YourApiSecret`
 
 <Param query="orderId" type="string" required>
 
-The identifier of the order.
+The Order Id received from the create order response
 
 Example: `f4a685afd2d90ea8a27d380ae353aa8e`
 
@@ -27,7 +27,7 @@ Example: `f4a685afd2d90ea8a27d380ae353aa8e`
 | `PENDING` |	Order gets created in this default state. |
 | `PAYMENT_PENDING` |	User is attempting to pay for this order. |
 | `PAYMENT_SUCCESS` |	Payment has been done by the user. |
-| `RELEASING_CRYPTO` | Payment has been received for this order, and now we are releasing the crypto for the end user. |
+| `PROCESSING_CRYPTO` | Payment has been received for this order, and now we are releasing the crypto for the end user. |
 | `COMPLETED` |	Payment has been completed and user has successfully received crypto in their wallet. |
 
 <RequestExample>
@@ -64,19 +64,6 @@ curl --location \
     "symbol": "Mex$"
   }
 }
-```
-
-```bash Headers
-Server: nginx/1.18.0 (Ubuntu)
-Date: Tue, 30 Aug 2022 15:17:20 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 392
-Connection: keep-alive
-X-Request-Id: 2c6f1f86-b0a2-4efb-a45e-5c64a236c05c
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, HEAD
-Access-Control-Allow-Headers: Content-Type, x-rl-auth-token, x-rl-partner-auth-token
-ETag: W/"188-guBLacz20GZD5VO66ngAEgOo1As"
 ```
 
 </ResponseExample>
