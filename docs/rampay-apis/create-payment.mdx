@@ -1,0 +1,62 @@
+---
+title: "Create Fiat Payment"
+description: "Create a payment for order"
+api: "POST /v1/partner/order/payment"
+---
+
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
+
+### Body
+
+<Param body="orderId" type="string" required>
+</Param>
+<Param body="document" type="object" required>
+
+<Expandable title="Toggle object">
+
+<Param body="type" type="string" required>
+Document type.
+Brazil: CPF
+Mexico: CURP / RFC / IFE / PASS / Residencia
+Peru: CE / DNI / PASS / RUC
+</Param>
+<Param body="id" type="string" required>
+The document id for the document type provided
+</Param>
+
+</Expandable>
+
+</Param>
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request POST 'https://api-sandbox.rampay.io/v1/partner/order/payment' \
+--data-raw '{
+    "orderId": "def0077c84211116d0a4c199850153c3",
+    "document": {
+        "type": "CPF",
+        "id": "84932568207"
+    }
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+    "redirectLink": "https://payment.link",
+    "fiatAmount": "500.00000000000000000000000000000000000000000000000000",
+    "fiatCode": "BRL"
+}
+```
+
+</ResponseExample>
