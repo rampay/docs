@@ -37,9 +37,8 @@ This is how this flow works,
 - Send the Order Id along with your API key in the query params like https://sandbox.rampay.io/exchange?orderId=ORDER_ID&apiKey=API_KEY
 - Configure webhooks in [partner dashboard](https://partner-sandbox.rampay.io) to get order status updates and get the status of each order using the [GET order API](https://docs.rampay.io/rampay-apis/get-order).
 
-If instead of opening the Rampay widget, you wish to directly get the payment link, then you can add the below steps as well:
-- After creating an order, you can call the [Request OTP API](https://docs.rampay.io/rampay-apis/order-verify-request) to request the email verification OTP.
-- Upon receiving the OTP, you can call the [Verify OTP API](https://docs.rampay.io/rampay-apis/order-verify-otp) to the email address successfully.
+If instead of opening the Rampay widget, you wish to directly get the payment link, you can follow the steps below:
+- Get additional approval from our compliance.
 - Now you will be able to call the [Create Payment API](https://docs.rampay.io/rampay-apis/create-payment) to get the payment link directly.
 - For completing a transaction we need the end user's identity document id. You can either pass this value with the create payment API, or the user can enter the document id in the payment link itself.
 

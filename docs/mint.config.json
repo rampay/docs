@@ -56,8 +56,6 @@
         "rampay-apis/create-order",
         "rampay-apis/get-order",
         "rampay-apis/request-otp",
-        "rampay-apis/order-verify-request",
-        "rampay-apis/order-verify-otp",
         "rampay-apis/create-payment"
       ]
     }
