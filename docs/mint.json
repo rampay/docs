@@ -8,9 +8,7 @@
   "colors": {
     "primary": "#0458F2",
     "light": "#38B4FF",
-    "dark": "#0A3A93",
-    "ultraLight": "#E3F7FF",
-    "ultraDark": "#010529"
+    "dark": "#0A3A93"
   },
   "api": {
     "baseUrl": [
@@ -24,18 +22,18 @@
   "topbarLinks": [
     {
       "name": "Contact Us",
-      "url": "https://rampay.io/#contact-us"
+      "url": "https://payfura.com/#contact-us"
     }
   ],
   "topbarCtaButton": {
     "name": "Try it",
-    "url": "https://rampay.io/exchange"
+    "url": "https://payfura.com/exchange"
   },
   "anchors": [
     {
       "name": "Demo",
       "icon": "circle-play",
-      "url": "https://rampay.io/exchange/"
+      "url": "https://payfura.com/exchange"
     }
   ],
   "navigation": [
