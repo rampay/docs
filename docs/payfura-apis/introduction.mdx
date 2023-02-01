@@ -1,0 +1,48 @@
+---
+title: "Introduction"
+description: "Payfura is a fiat<>crypto on/off ramp payment gateway. Our robust API solution provides seamless integration to interact with the platform"
+---
+
+
+`APIs Sandbox URL`: [https://api-sandbox.payfura.com](https://api-sandbox.payfura.com)
+
+`APIs Production URL`: [https://api.payfura.com](https://api.payfura.com)
+
+## Authentication
+
+Please send you API secret as Bearer token in the Authorization header in all the following APIs. Some GET APIs may work without the header, but it is highly recommended that you send this 
+## Overview
+
+Following APIs are provided:
+
+<Card title="List of Fiat Currencies" href="/payfura-apis/list-of-fiat-currencies">
+  GET /v2/partner/fiat_currencies
+</Card>
+
+<Card title="List of Crypto Currencies" href="/payfura-apis/list-of-crypto-currencies">
+  GET /v1/partner/crypto_currencies
+</Card>
+
+<Card title="Pricing & Fees" href="/payfura-apis/pricing">
+  POST /v1/partner/pricing
+</Card>
+
+<Card title="Create Order" href="/payfura-apis/create-order">
+  POST /v1/partner/order
+</Card>
+
+<Card title="Get Order" href="/payfura-apis/get-order">
+  GET /v1/partner/order?orderId=ORDER_ID
+</Card>
+
+<Card title="Create User" href="/payfura-apis/create-user">
+  POST /v1/partner/user
+</Card>
+
+<Card title="Get User" href="/payfura-apis/get-user">
+  GET /v1/partner/user/USER_ID
+</Card>
+
+<Card title="Update User" href="/payfura-apis/update-user">
+  PUT /v1/partner/user
+</Card>
