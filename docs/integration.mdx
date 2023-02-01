@@ -1,17 +1,20 @@
 ---
 title: "Direct widget integration"
-description: "This guide contains steps to integrate the Rampay widget in your website/app"
+description: "This guide contains steps to integrate the Payfura widget in your website/app"
 ---
 
 ## Steps
 
-- Get an API key by contacting us. Our contact info is mentioned [here](https://www.notion.so/Welcome-to-Rampay-22299f0cf1e94be4867dab59f8d70225)
+- Get an API key by contacting us. Our contact info is mentioned [here](https://payfura.com/#contact-us)
 - Place the widget
 
 ```html
 <iframe
-  src="https://exchange.rampay.io ?apiKey={PARTNER_API_KEY}"
+  src="https://exchange.payfura.com?apiKey={PARTNER_API_KEY}"
   width="50%"
+  loading="lazy"
+  allow="camera; accelerometer; autoplay; ; gyroscope; payment"
+  frameborder="0"
   height="100%">
   Your browser does not support iframes.
 </iframe>
@@ -27,9 +30,11 @@ The customisation options can be passed as query params with the widget link in 
 
 ```html
 <iframe
-  src="https://exchange.rampay.io
-        ?from=usd&to=btc"
+  src="https://exchange.payfura.com?apiKey={PARTNER_API_KEY}"
   width="50%"
+  loading="lazy"
+  allow="camera; accelerometer; autoplay; ; gyroscope; payment"
+  frameborder="0"
   height="100%">
   Your browser does not support iframes.
 </iframe>
@@ -101,7 +106,7 @@ Defaults to empty in which case we show all currencies
 
 This param is used for masking all other params in the form of a JWT token
 
-For more details check out [here](https://www.notion.so/Rampay-Integration-Steps-9e8fa773020f400c9787b420d8494fe0)
+For more details check out [here](https://docs.payfura.com/integration#how-to-sign-query-params-in-url-optional)
 
 </Param>
 
@@ -144,14 +149,14 @@ The `walletAddress` param mentioned above should be used in this case to set the
 
 ## How to sign query params in URL (Optional)
 
-Rampay provides the ability to mask the query params if you don't want your users to see or edit the query params.
+Payfura provides the ability to mask the query params if you don't want your users to see or edit the query params.
 
 This can be done by following the below process:
 
-1. Contact Rampay team to generate a JWT secret key for you.
+1. Contact Payfura team to generate a JWT secret key for you.
 2. Form a JSON for your query params and sign that payload with JWT using your secret key.
 3. Pass on the generated token into the query param `q` while calling the widget.
-   Eg. https://exchange.rampay.io?q=SIGNED_JWT_TOKEN
+   Eg. https://exchange.payfura.com?q=SIGNED_JWT_TOKEN
 
 Sample code to generate the JWT token for masking query params.
 

@@ -1,6 +1,6 @@
 ---
 title: "Create Fiat Payment"
-description: "Create a payment for order. This API needs to be explicitly enabled for partners. Please reach out Rampay team to get this enabled"
+description: "Create a payment for order. This API needs to be explicitly enabled for partners. Please reach out Payfura team to get this enabled"
 api: "POST /v1/partner/order/payment"
 ---
 
@@ -37,7 +37,7 @@ The document id for the document type provided
 <RequestExample>
 
 ```bash Request Example
-curl --location --request POST 'https://api-sandbox.rampay.io/v1/partner/order/payment' \
+curl --location --request POST 'https://api-sandbox.payfura.com/v1/partner/order/payment' \
 --data-raw '{
     "orderId": "def0077c84211116d0a4c199850153c3",
     "document": {

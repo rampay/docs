@@ -1,19 +1,19 @@
 {
-  "name": "Rampay",
+  "name": "Payfura",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0458F2",
-    "light": "#38B4FF",
-    "dark": "#0A3A93"
+    "primary": "#019387",
+    "light": "#019387",
+    "dark": "#019387"
   },
   "api": {
     "baseUrl": [
-      "https://api-sandbox.rampay.io",
-      "https://api.rampay.io"
+      "https://api-sandbox.payfura.com",
+      "https://api.payfura.com"
     ],
     "auth": {
       "method": "bearer"
@@ -42,25 +42,22 @@
       "pages": ["mainpage", "integration"]
     },
     {
-      "group": "Rampay APIs",
+      "group": "Payfura APIs",
       "pages": [
-        "rampay-apis/introduction",
-        "rampay-apis/list-of-crypto-currencies",
-        "rampay-apis/list-of-fiat-currencies",
-        "rampay-apis/pricing",
-        "rampay-apis/create-user",
-        "/rampay-apis/get-user",
-        "rampay-apis/update-user",
-        "rampay-apis/create-order",
-        "rampay-apis/get-order",
-        "rampay-apis/request-otp",
-        "rampay-apis/create-payment"
+        "payfura-apis/introduction",
+        "payfura-apis/list-of-crypto-currencies",
+        "payfura-apis/list-of-fiat-currencies",
+        "payfura-apis/pricing",
+        "payfura-apis/create-user",
+        "payfura-apis/get-user",
+        "payfura-apis/update-user",
+        "payfura-apis/create-order",
+        "payfura-apis/get-order"
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/rampay_official",
-    "linkedin": "https://www.linkedin.com/company/rampay/about",
-    "instagram": "https://www.instagram.com/rampay_crypto"
+    "twitter": "https://twitter.com/payfura",
+    "linkedin": "https://www.linkedin.com/company/payfura/about"
   }
 }
