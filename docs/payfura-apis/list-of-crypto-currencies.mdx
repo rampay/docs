@@ -13,9 +13,9 @@ Header Key: `Authorization`
 Header Value: `Bearer YourApiSecret`
 ### Parameters
 
-<Param query="countryCode" type="string">
+<Param query="countryCode" type="string" required>
 
-In future the list of crypto currencies may depend on the country user is trying to pay from, so if possible please send the country code in the query param to avoid any future changes required.
+Country code of the end user. This is required because we support different crypto currencies in different countries due to local regulations.
 
 Example: `BR`
 
