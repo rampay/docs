@@ -119,6 +119,12 @@ Example: `12345`
 
 </Param>
 
+<Param body="partnerMetadata" type="object">
+
+(Optional) A key value map that can be used to place any client level data like client user id, email etc. This will be returned back in user get response.
+
+</Param>
+
 <RequestExample>
 
 ```bash Request Example
@@ -137,6 +143,9 @@ curl --location --request POST 'https://api-sandbox.payfura.com/v1/partner/user'
         "city": "Los Angeles",
         "country": "US",
         "postalCode": "12345"
+    },
+    "partnerMetadata": {
+      "userId": "abc"
     }
 }
 '

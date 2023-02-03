@@ -42,6 +42,18 @@ Crypto wallet address for the selected crypto currency.
 
 </Param>
 
+<Param body="walletAddressMemo" type="string">
+
+(Optional) For crypto currencies that support memo along with a wallet address, this field can be used to send the memo. Look for memo_required property in crypto currency list response
+
+</Param>
+
+<Param body="partnerMetadata" type="object">
+
+(Optional) A key value map that can be used to place any client level data like client order id, email etc. This will be returned back in order get response.
+
+</Param>
+
 </Expandable>
 
 </Param>
@@ -61,7 +73,10 @@ curl --location --request POST 'https://api-sandbox.payfura.com/v1/partner/order
         "cfpmId": 21,
         "cryptoCurrencyId": 4,
         "fiatAmount": 3500,
-        "walletAddress": "12QaQvYPSimyrd51oeY1ZPvJSC2n8fXKB1"
+        "walletAddress": "12QaQvYPSimyrd51oeY1ZPvJSC2n8fXKB1",
+        "partnerMetadata": {
+          "orderId": "abc"
+        }
     },
     "userId": "0421c537da81329317391675b42a020d"
 }'
