@@ -1,0 +1,96 @@
+---
+title: "Get Order History"
+description: "Fetch order history using duration"
+api: "GET /v1/partner/order_history"
+---
+
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
+
+### Parameters
+
+<Param query="pageNumber" type="string">
+
+The page number for pagination. Defaults to 0.
+
+</Param>
+<Param query="pageSize" type="string">
+
+Number of results desired per page.
+
+</Param>
+
+<Param query="durationUnit" type="string">
+
+Unit can be `seconds`, `minutes`, `hours`, `days`, `weeks`, `months`
+
+</Param>
+
+<Param query="duration" type="string">
+
+Filter to for last number of x duration units.
+
+Example: If you want to fetch data for last 7 days,
+then `durationUnit` would be `days` and `duration` would be `7`
+
+</Param>
+
+<Param query="orderStatus" type="string">
+
+Filter to fetch orders in a particular status. Possible values are listed in the table below.
+
+</Param>
+
+| ORDER STATUS |	Definition |
+| ------------ | ----------- |
+| `INITIATED` |	Order has been created. |
+| `PENDING` |	Similar to INITIATED. Based on an internal logic, order can be created in INITIATED state or PENDING |
+| `PAYMENT_PENDING` |	User is attempting to pay for this order. |
+| `PAYMENT_SUCCESS` |	Payment has been received for this order. |
+| `PROCESSING_CRYPTO` | We are releasing the crypto for the end user. |
+| `COMPLETED` |	User has successfully received crypto in their wallet. |
+| `FAILED` |	Order failed. Mostly due to payment failure. |
+
+<RequestExample>
+
+```bash Request Example
+curl --location \
+  --request GET 'https://api-sandbox.payfura.com/v1/partner/order_history?pageNumber=0&pageSize=1000000&duration=30&durationUnit=days'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+[
+  {
+    "id": "9ed1f40373c1f33047087b927d7f619c",
+    "status": "PENDING",
+    "destination_wallet_address": "0xF23fBCAe7e3527b50db968c0274Ce918fd202569",
+    "statusReason": "Order is pending",
+    "type": "FIAT_TO_CRYPTO",
+    "cryptoCurrencyCode": "USDT",
+    "cryptoCurrencyNetwork": "erc20",
+    "cryptoAmount": null,
+    "transactionLink": "",
+    "fiatCurrencyCode": "BRL",
+    "fiatCurrencyAmount": "527.95",
+    "fiatCurrencySymbol": "R$",
+    "createdAt": "Feb 3, 2023 6:04 AM",
+    "createdAtTimestamp": "2023-02-03T06:04:06.046Z",
+    "userEmail": "something12312@rampay.io",
+    "userCountry": "US",
+    "paymentMethodName": "Boleto",
+    "partnerFeeCurrency": "USD",
+    "partnerFeeAmount": "0.00"
+  }
+]
+```
+
+</ResponseExample>

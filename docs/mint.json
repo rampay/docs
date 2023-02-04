@@ -52,7 +52,8 @@
         "payfura-apis/get-user",
         "payfura-apis/update-user",
         "payfura-apis/create-order",
-        "payfura-apis/get-order"
+        "payfura-apis/get-order",
+        "payfura-apis/get-order-history"
       ]
     }
   ],

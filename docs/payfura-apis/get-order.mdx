@@ -24,11 +24,13 @@ Example: `f4a685afd2d90ea8a27d380ae353aa8e`
 
 | ORDER STATUS |	Definition |
 | ------------ | ----------- |
-| `PENDING` |	Order gets created in this default state. |
+| `INITIATED` |	Order has been created. |
+| `PENDING` |	Similar to INITIATED. Based on an internal logic, order can be created in INITIATED state or PENDING |
 | `PAYMENT_PENDING` |	User is attempting to pay for this order. |
-| `PAYMENT_SUCCESS` |	Payment has been done by the user. |
-| `PROCESSING_CRYPTO` | Payment has been received for this order, and now we are releasing the crypto for the end user. |
-| `COMPLETED` |	Payment has been completed and user has successfully received crypto in their wallet. |
+| `PAYMENT_SUCCESS` |	Payment has been received for this order. |
+| `PROCESSING_CRYPTO` | We are releasing the crypto for the end user. |
+| `COMPLETED` |	User has successfully received crypto in their wallet. |
+| `FAILED` |	Order failed. Mostly due to payment failure. |
 
 <RequestExample>
 
