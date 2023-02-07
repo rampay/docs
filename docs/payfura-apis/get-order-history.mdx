@@ -40,6 +40,15 @@ then `durationUnit` would be `days` and `duration` would be `7`
 
 </Param>
 
+<Param query="lastUpdatedStartTimeMs" type="number">
+
+Filter for fetching orders updated since this timestamp. This represents epoch time in milliseconds.
+
+Example: 1675581446000
+If both `duration` and `lastUpdatedStartTimeMs` are provided in filters, then `lastUpdatedStartTimeMs` will take precedence and `duration` will be ignored.
+
+</Param>
+
 <Param query="orderStatus" type="string">
 
 Filter to fetch orders in a particular status. Possible values are listed in the table below.
@@ -84,6 +93,8 @@ curl --location \
     "fiatCurrencySymbol": "R$",
     "createdAt": "Feb 3, 2023 6:04 AM",
     "createdAtTimestamp": "2023-02-03T06:04:06.046Z",
+    "lastUpdatedAt": "Feb 3, 2023 6:04 AM",
+    "lastUpdatedAtTimestamp": "2023-02-03T06:04:06.046Z",
     "userEmail": "something12312@rampay.io",
     "userCountry": "US",
     "paymentMethodName": "Boleto",
