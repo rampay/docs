@@ -20,7 +20,7 @@ Payfura provides 3 modes of integration:
 ### 1. Direct widget integration - Get live quickly in just few lines of code
 
 Embed our widget within your application using an iframe. Customise a lot of things like color theme, default currencies, amount, etc.
-For more details on how this integration works, you can follow this Check it out [here](https://docs.payfura.com/integration).
+For more details on how this integration works, you can follow this [link](https://docs.payfura.com/integration).
 We are constantly adding more customization options to enhance the widget experience for you.
 
 ### 2. Complete End to End API Integration (Direct)
@@ -36,6 +36,7 @@ This is how this flow works,
 - [Create an order](https://docs.payfura.com/payfura-apis/create-order) from your backend with the user context.
 - Now you can ask your end user to complete the payment on our page by sending the Order Id along with your API key in the query params like https://sandbox.payfura.com/exchange?orderId=ORDER_ID&apiKey=API_KEY
 - Configure webhooks in [partner dashboard](https://partner-sandbox.payfura.com) to get order status updates and get the status of each order using the [GET order API](https://docs.payfura.com/payfura-apis/get-order).
+- In sandbox environment, to simulate order completion, you can log on to your [partner dashboard](https://partner-sandbox.payfura.com) and mark orders in `PAYMENT_PENDING` state as `COMPLETED` or `FAILED`. Refer [GET order API](https://docs.payfura.com/payfura-apis/get-order) to know more about order statuses.
 
 ### 3. Lightweight API Integration
 
@@ -48,3 +49,4 @@ This is how this flow works,
 - [Create an order](https://docs.payfura.com/payfura-apis/create-order) from your backend with the user context.
 - Send the Order Id along with your API key in the query params like https://sandbox.payfura.com/exchange?orderId=ORDER_ID&apiKey=API_KEY
 - Configure webhooks in [partner dashboard](https://partner-sandbox.payfura.com) to get order status updates and get the status of each order using the [GET order API](https://docs.payfura.com/payfura-apis/get-order).
+- In sandbox environment, to simulate order completion, you can log on to your [partner dashboard](https://partner-sandbox.payfura.com) and mark orders in `PAYMENT_PENDING` state as `COMPLETED` or `FAILED`. Refer [GET order API](https://docs.payfura.com/payfura-apis/get-order) to know more about order statuses.
