@@ -55,6 +55,12 @@
         "payfura-apis/get-order",
         "payfura-apis/get-order-history"
       ]
+    },
+    {
+      "group": "Sandbox",
+      "pages": [
+        "sandbox/test-cards"
+      ]
     }
   ],
   "footerSocials": {
