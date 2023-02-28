@@ -1,0 +1,106 @@
+---
+title: "Pricing V2"
+description: "Fetch price for a payment method, cryptocurrency and fiat amount"
+api: "POST /v2/partner/pricing"
+---
+
+### Auth Header
+
+Please send you API Secret as Bearer token in Authorization header.
+
+Header Key: `Authorization`
+
+Header Value: `Bearer YourApiSecret`
+### Body
+
+<Param body="fiatAmount" type="integer" required>
+
+Amount of fiat currency.
+
+Example: `200`
+
+</Param>
+
+<Param body="cryptoCurrencyId" type="number" required>
+
+Crypto currency id as part of list of crypto currencies response.
+
+Example: 1
+
+</Param>
+
+<Param body="fiatCurrencyCode" type="string">
+
+Fiat currency code as part of list of fiat currencies response.
+
+Example: `EUR`
+
+
+</Param>
+
+<Param body="direction" type="string">
+
+Whether to buy or sell. Currently only BUY_CRYPTO is supported.
+
+Example: `BUY_CRYPTO`
+
+</Param>
+
+<Param body="paymentMethodKey" type="string" required>
+
+Short code mentioned in list of fiat currencies response inside payment method object. All values in the `short_codes` array value of fiat currency will map to the same payment method. You can choose to send anyone.
+
+Example: In case of card payments, all 3 values `creditcard`, `visa`, `mastercard` will map to the same payment method.
+
+</Param>
+
+<Param body="countryCode" type="string" required>
+
+Country of the end user. In case you don't have this value, you can send the `country_code` from fiat currency list response.
+
+Example: `US`
+
+</Param>
+
+<Param body="endUserIpAddress" type="string">
+
+(Optional) IP address of the end user. Although it is optional, but it is highly recommeded you send this. This significantly helps in reducing fraud.
+
+Example: `49.34.23.66`
+
+</Param>
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request POST 'https://api-sandbox.payfura.com/v2/partner/pricing' \
+  --data-raw '{
+    "fiatAmount": 200,
+    "cryptoCurrencyId": "4",
+    "fiatCurrencyCode": "EUR",
+    "direction": "BUY_CRYPTO",
+    "paymentMethodKey": "creditcard",
+    "countryCode": "FR",
+    "endUserIpAddress": "49.36.178.214"  
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Body
+{
+    "status": "success",
+    "response": {
+        "paymentMethodFee": 7,
+        "priceInFiatCurrency": "22080.894030",
+        "cryptoCurrencyAmount": "0.008691",
+        "witdrawalFeeInFiatCurrency": "1.1040",
+        "fxRate": 0.9441,
+        "cfpmId": 27
+    }
+}
+```
+
+</ResponseExample>

@@ -34,143 +34,153 @@ curl --location \
 
 ```json Body
 {
-  "status": "success",
-  "response": [
-    {
-      "fiat_id": 1,
-      "country_id": 7,
-      "country_name": "Brazil",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/brazil.png",
-      "country_code": "BR",
-      "fiat_name": "Brazilian Real",
-      "fiat_code": "BRL",
-      "fiat_symbol": "R$",
-      "fiat_default_amount": "250.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
+    "status": "success",
+    "response": [
         {
-          "cfpm_id": 1,
-          "name": "Bank Tranfer",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
+            "fiat_id": 1,
+            "country_id": 7,
+            "country_name": "Brazil",
+            "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/brazil.png",
+            "country_code": "BR",
+            "fiat_name": "Brazilian Real",
+            "fiat_code": "BRL",
+            "fiat_symbol": "R$",
+            "fiat_default_amount": "250.00000000000000000000000000000000000000000000000000",
+            "payment_methods": [
+                {
+                    "cfpm_id": 11,
+                    "sort_order_per_country": 1,
+                    "type": "Voucher",
+                    "name": "Boleto",
+                    "image": "https://rl-crypto-currency.s3.amazonaws.com/pay/BL.svg",
+                    "short_codes": [
+                        [
+                            "boleto"
+                        ]
+                    ],
+                    "minimum_buy_amount": 200,
+                    "maximum_buy_amount": 5000
+                },
+                {
+                    "cfpm_id": 13,
+                    "sort_order_per_country": null,
+                    "type": "Bank Deposit",
+                    "name": "Caixa",
+                    "image": "https://rl-crypto-currency.s3.amazonaws.com/pay/CA.svg",
+                    "short_codes": [
+                        [
+                            "caixa"
+                        ]
+                    ],
+                    "minimum_buy_amount": 200,
+                    "maximum_buy_amount": 5000
+                },
+                {
+                    "cfpm_id": 12,
+                    "sort_order_per_country": null,
+                    "type": "Bank Transfer",
+                    "name": "Banco Do Brasil",
+                    "image": "https://rl-crypto-currency.s3.amazonaws.com/pay/BB.svg",
+                    "short_codes": [
+                        [
+                            "banco_do_brasil"
+                        ]
+                    ],
+                    "minimum_buy_amount": 200,
+                    "maximum_buy_amount": 5000
+                }
+            ],
+            "sell_allowed": false,
+            "supported_countries": [
+                "BR"
+            ]
         },
         {
-          "cfpm_id": 3,
-          "name": "Card",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/card_payment_icon.png"
-        },
-        {
-          "cfpm_id": 5,
-          "name": "Voucher",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
+            "fiat_id": 9,
+            "country_id": 30,
+            "country_name": "Euro",
+            "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/euro.png",
+            "country_code": "EU",
+            "fiat_name": "Euro",
+            "fiat_code": "EUR",
+            "fiat_symbol": "€",
+            "fiat_default_amount": "200.00000000000000000000000000000000000000000000000000",
+            "payment_methods": [
+                {
+                    "cfpm_id": 27,
+                    "sort_order_per_country": null,
+                    "type": null,
+                    "name": "Pay with Card",
+                    "image": "https://rl-crypto-currency.s3.amazonaws.com/pay/credit_card.png",
+                    "short_codes": [
+                        "creditcard",
+                        "visa",
+                        "mastercaard"
+                    ],
+                    "minimum_buy_amount": 20,
+                    "maximum_buy_amount": 2000
+                },
+                {
+                    "cfpm_id": 17,
+                    "sort_order_per_country": null,
+                    "type": "Bank Transfer",
+                    "name": "SEPA",
+                    "image": "https://rl-crypto-currency.s3.amazonaws.com/pay/sepa_logo.png",
+                    "short_codes": [
+                        [
+                            "sepa"
+                        ]
+                    ],
+                    "minimum_buy_amount": 5,
+                    "maximum_buy_amount": 1000
+                }
+            ],
+            "sell_allowed": false,
+            "supported_countries": [
+                "AD",
+                "AT",
+                "BE",
+                "BG",
+                "CY",
+                "CZ",
+                "DK",
+                "EE",
+                "FO",
+                "FI",
+                "FR",
+                "DE",
+                "GI",
+                "GR",
+                "GL",
+                "GG",
+                "VA",
+                "HU",
+                "IS",
+                "IE",
+                "IM",
+                "IT",
+                "JE",
+                "LV",
+                "LI",
+                "LT",
+                "LU",
+                "MT",
+                "MC",
+                "NL",
+                "NO",
+                "PL",
+                "PT",
+                "RO",
+                "PM",
+                "SM",
+                "SK",
+                "SI",
+                "ES",
+                "SE",
+                "TR"
+            ]
         }
-      ],
-      "sell_allowed": false
-    },
-    {
-      "fiat_id": 2,
-      "country_id": 19,
-      "country_name": "Mexico",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/mexico.png",
-      "country_code": "MX",
-      "fiat_name": "Mexican Peso",
-      "fiat_code": "MXN",
-      "fiat_symbol": "Mex$",
-      "fiat_default_amount": "2000.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
-        {
-          "cfpm_id": 2,
-          "name": "Bank Tranfer",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
-        },
-        {
-          "cfpm_id": 4,
-          "name": "Card",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/card_payment_icon.png"
-        },
-        {
-          "cfpm_id": 6,
-          "name": "Voucher",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
-        }
-      ],
-      "sell_allowed": false
-    },
-    {
-      "fiat_id": 3,
-      "country_id": 22,
-      "country_name": "Philippines",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/philippine.png",
-      "country_code": "PH",
-      "fiat_name": "Philippine Peso",
-      "fiat_code": "PHP",
-      "fiat_symbol": "₱",
-      "fiat_default_amount": "5000.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
-        {
-          "cfpm_id": 7,
-          "name": "Bank Deposit",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_deposit_icon.png"
-        }
-      ],
-      "sell_allowed": false
-    },
-    {
-      "fiat_id": 4,
-      "country_id": 26,
-      "country_name": "Thailand",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/thailand.png",
-      "country_code": "TH",
-      "fiat_name": "Thai Baht",
-      "fiat_code": "THB",
-      "fiat_symbol": "฿",
-      "fiat_default_amount": "1500.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
-        {
-          "cfpm_id": 8,
-          "name": "Bank Tranfer",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/bank_transfer_icon.png"
-        }
-      ],
-      "sell_allowed": false
-    },
-    {
-      "fiat_id": 5,
-      "country_id": 31,
-      "country_name": "Nigeria",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/nigeria.png",
-      "country_code": "NG",
-      "fiat_name": "Nigerian Naira",
-      "fiat_code": "NGN",
-      "fiat_symbol": "₦",
-      "fiat_default_amount": "40000.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
-        {
-          "cfpm_id": 9,
-          "name": "Voucher",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
-        }
-      ],
-      "sell_allowed": false
-    },
-    {
-      "fiat_id": 6,
-      "country_id": 32,
-      "country_name": "Ghana",
-      "country_flag_url": "https://rl-crypto-currency.s3.amazonaws.com/ghana.png",
-      "country_code": "GH",
-      "fiat_name": "Ghanaian Cedi",
-      "fiat_code": "GHS",
-      "fiat_symbol": "GH₵",
-      "fiat_default_amount": "1000.00000000000000000000000000000000000000000000000000",
-      "payment_methods": [
-        {
-          "cfpm_id": 10,
-          "name": "Voucher",
-          "image": "https://rl-crypto-currency.s3.amazonaws.com/cash_voucher_icon.jpeg"
-        }
-      ],
-      "sell_allowed": false
-    }
-  ]
+    ]
 }
 ```
 

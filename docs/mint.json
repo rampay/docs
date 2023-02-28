@@ -48,6 +48,7 @@
         "payfura-apis/list-of-crypto-currencies",
         "payfura-apis/list-of-fiat-currencies",
         "payfura-apis/pricing",
+        "payfura-apis/pricing-v2",
         "payfura-apis/create-user",
         "payfura-apis/get-user",
         "payfura-apis/update-user",
